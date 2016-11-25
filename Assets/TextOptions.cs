@@ -23,9 +23,17 @@ public class TextOptions
 
     public static string[] earnOptions = new string[]
     {
-            "Earn $15 for cleaning a car",
-            "Earn $15 for delivering newspapers",
+            "Earn $5 for cleaning a car",
+            "Earn $5 for delivering newspapers",
             "Earn $10 for raking your neighbor's lawn",
-            "Earn $15 for cat-sitting"
+            "Earn $10 for cat-sitting"
     };
+
+    public static string[] goalOptions = new string[]
+    {
+            "Buy Mother's Day gift for $50",
+            "Buy Bike for $60"
+            "Buy gift for friend's birthday for $40",
+            "Buy new fiction novel for $50"
+    }
 }
