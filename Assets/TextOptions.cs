@@ -6,23 +6,26 @@ public class TextOptions
 
     public static string[] positiveOptions = new string[] 
     {
-            "Hello",
-            "Goodbye",
-            "Test"
+            "Buy Apples for $10",
+            "Buy a Novel for $10",
+            "Buy Pencils for $5",
+            "Buy Erasers for $5"
     };
 
 
     public static string[] negativeOptions = new string[]
     {
-            "Hello1",
-            "Goodbye1",
-            "Test1"
+            "Buy a Video Game Console for $50",
+            "Buy New Limited Fancy Sneakers for $30",
+            "Buy a new Smartphone for $80",
+            "Buy Designer Jeans for $40"
     };
 
     public static string[] earnOptions = new string[]
     {
-            "Hello2",
-            "Goodbye2",
-            "Test2"
+            "Earn $15 for cleaning a car",
+            "Earn $15 for delivering newspapers",
+            "Earn $10 for raking your neighbor's lawn",
+            "Earn $15 for cat-sitting"
     };
 }
