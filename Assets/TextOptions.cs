@@ -32,8 +32,8 @@ public class TextOptions
     public static string[] goalOptions = new string[]
     {
             "Buy Mother's Day gift for $50",
-            "Buy Bike for $60"
+            "Buy Bike for $60",
             "Buy gift for friend's birthday for $40",
             "Buy new fiction novel for $50"
-    }
+	};
 }

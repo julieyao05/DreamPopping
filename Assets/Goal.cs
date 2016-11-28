@@ -3,6 +3,25 @@ using System.Collections;
 
 public class Goal : MonoBehaviour {
 
+	[SerializeField]
+	private Object balloonPrefab;
+
+	void Start()
+	{
+		StartCoroutine(potentialGoals());
+	}
+
+	// Update is called once per frame
+	void Update () {
+
+	}
+
+	public enum BalloonType
+	{
+		SELECT_GOAL
+	};
+
+	public BalloonType type;
 
 	public void InitializeBalloon(BalloonType type)
 	{
@@ -16,7 +35,6 @@ public class Goal : MonoBehaviour {
 
 		UpdateText (newText);
 
-		StartCoroutine (Float ());
 	}
 
     public void UpdateText(string newText)
@@ -28,15 +46,22 @@ public class Goal : MonoBehaviour {
 
     } 
 
-	Vector2 staticPosition1 = new Vector2(5, 20);		// Balloon on top-left
+	private IEnumerator potentialGoals()
+	{
 
-	Vector2 staticPosition2 = new Vector2(20, 20);		// Balloon on top-right
+		while (true) {
 
-	Vector2 staticPosition3 = new Vector2(11, 10);		// Balloon on bottom-center
+			Vector2 staticPosition1 = new Vector2 (5, 20);		// Balloon on top-left
 
-	GameObject staticBalloon1 = GameObject.Instantiate(balloonPrefab, staticPosition1, Quaternion.identity) as GameObject;
+			Vector2 staticPosition2 = new Vector2 (20, 20);		// Balloon on top-right
 
-	GameObject staticBalloon2 = GameObject.Instantiate(balloonPrefab, staticPosition2, Quaternion.identity) as GameObject;
+			Vector2 staticPosition3 = new Vector2 (11, 10);		// Balloon on bottom-center
 
-	GameObject staticBalloon3 = GameObject.Instantiate(balloonPrefab, staticPosition3, Quaternion.identity) as GameObject;
+			GameObject staticBalloon1 = GameObject.Instantiate (balloonPrefab, staticPosition1, Quaternion.identity) as GameObject;
+
+			GameObject staticBalloon2 = GameObject.Instantiate (balloonPrefab, staticPosition2, Quaternion.identity) as GameObject;
+
+			GameObject staticBalloon3 = GameObject.Instantiate (balloonPrefab, staticPosition3, Quaternion.identity) as GameObject;
+		}
+	}
 }
