@@ -80,5 +80,17 @@ public class Balloon : MonoBehaviour {
 
 
 
-    } 
+    }
+
+	if (// first scene after selecting a goal) {
+		StartCoroutine(ShowMessage("Your 'balance' or 'budget' is the amount of money you have in your bank account.", /*pause game*/));
+	}
+
+	IEnumerator ShowMessage (string message, float delay) {
+		guiText.text = message;
+		guiText.enabled = true;
+		yield return new WaitForSeconds(delay);
+		guiText.enabled = false;
+	}
+
 }

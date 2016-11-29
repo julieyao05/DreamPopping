@@ -22,6 +22,7 @@ public class BalloonSpawner : MonoBehaviour {
     void Start()
     {
         StartCoroutine(SpawnBalloons());
+		StartCoroutine (tickingTimer ());
     }
 	
 	// Update is called once per frame
@@ -50,4 +51,16 @@ public class BalloonSpawner : MonoBehaviour {
 
         }
     }
+	void tickingTimer() {
+		public static float timer;
+		int minutes = Mathf.FloorToInt(timer/60F);
+		int seconds = Mathf.FloorToInt(timer - minutes * 60);
+		string time = string.Format("{0:0}:{1:00}", minutes, seconds);
+
+		GUI.Label(new Rect(10,10,250,100), time);	// how to figure out x and y points?
+
+		// if EARN_MONEY then subtract 10 seconds - do these go under function InitializeBalloon()?
+		// if SPEND_POSITIVE then add 10 seconds
+		// if SPEND_NEGATIVE then subtract 10 seconds
+	}
 }

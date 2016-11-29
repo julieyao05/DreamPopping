@@ -51,7 +51,7 @@ public class Goal : MonoBehaviour {
 
 		while (true) {
 
-			Vector2 staticPosition1 = new Vector2 (5, 20);		// Balloon on top-left
+			Vector2 staticPosition1 = new Vector2 (5, 20);		// Balloon on top-left, how to figure out x and y points?
 
 			Vector2 staticPosition2 = new Vector2 (20, 20);		// Balloon on top-right
 
