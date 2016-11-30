@@ -17,7 +17,7 @@ public class BalloonSpawner : MonoBehaviour {
     private Object balloonPrefab;
 
     [SerializeField]
-    private float spawnDelay;
+	private float spawnDelay;
 
     private float timer;
 
@@ -57,20 +57,22 @@ public class BalloonSpawner : MonoBehaviour {
     private IEnumerator SpawnBalloons()
     {
 
-        while (true)
-        {
+		while(true)
+		{	
+			for(var count=0; count<3; count++)
+			{
+	            float xPos = Random.Range(xMin, xMax);
 
-            float xPos = Random.Range(xMin, xMax);
+	            Vector2 spawnPosition = new Vector2(xPos, yHeight);
 
-            Vector2 spawnPosition = new Vector2(xPos, yHeight);
+	            GameObject spawnedBalloon = GameObject.Instantiate(balloonPrefab, spawnPosition, Quaternion.identity) as GameObject;
 
-            GameObject spawnedBalloon = GameObject.Instantiate(balloonPrefab, spawnPosition, Quaternion.identity) as GameObject;
+	            int randomBalloonType = Random.Range(0, 3);
 
-            int randomBalloonType = Random.Range(0, 3);
+	            spawnedBalloon.GetComponent<Balloon>().InitializeBalloon((Balloon.BalloonType)randomBalloonType, this);
 
-            spawnedBalloon.GetComponent<Balloon>().InitializeBalloon((Balloon.BalloonType)randomBalloonType, this);
-
-            yield return new WaitForSeconds(spawnDelay);
+			}
+			yield return new WaitForSeconds(8);
 
 
         }
