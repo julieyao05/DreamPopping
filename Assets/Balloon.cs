@@ -102,7 +102,7 @@ public class Balloon : MonoBehaviour {
     public void OnBalloonClick()
     {
 
-        Debug.Log("Pressed");
+        //Debug.Log("Pressed");
 
         switch (type)
         {
