@@ -6,9 +6,11 @@ public class Goal : MonoBehaviour {
 	[SerializeField]
 	private Object balloonPrefab;
 
+    private int value;
+
 	void Start()
 	{
-		StartCoroutine(potentialGoals());
+        createGoals();
 	}
 
 	// Update is called once per frame
@@ -30,10 +32,14 @@ public class Goal : MonoBehaviour {
 
 		string newText = "";
 
-		newText = TextOptions.goalOptions [Random.Range (0, TextOptions.goalOptions.Length)];
+        int randomVal = Random.Range(0, TextOptions.goalOptions.Length);
 
 
-		UpdateText (newText);
+        newText = TextOptions.goalOptions[randomVal].Key;
+        value = TextOptions.goalOptions[randomVal].Value;
+
+
+        UpdateText (newText);
 
 	}
 
@@ -46,22 +52,19 @@ public class Goal : MonoBehaviour {
 
     } 
 
-	private IEnumerator potentialGoals()
-	{
+    public void createGoals()
+    {
+        Vector2 staticPosition1 = new Vector2(5, 20);       // Balloon on top-left, how to figure out x and y points?
 
-		while (true) {
+        Vector2 staticPosition2 = new Vector2(20, 20);      // Balloon on top-right
 
-			Vector2 staticPosition1 = new Vector2 (5, 20);		// Balloon on top-left, how to figure out x and y points?
+        Vector2 staticPosition3 = new Vector2(11, 10);      // Balloon on bottom-center
 
-			Vector2 staticPosition2 = new Vector2 (20, 20);		// Balloon on top-right
+        GameObject staticBalloon1 = GameObject.Instantiate(balloonPrefab, staticPosition1, Quaternion.identity) as GameObject;
 
-			Vector2 staticPosition3 = new Vector2 (11, 10);		// Balloon on bottom-center
+        GameObject staticBalloon2 = GameObject.Instantiate(balloonPrefab, staticPosition2, Quaternion.identity) as GameObject;
 
-			GameObject staticBalloon1 = GameObject.Instantiate (balloonPrefab, staticPosition1, Quaternion.identity) as GameObject;
+        GameObject staticBalloon3 = GameObject.Instantiate(balloonPrefab, staticPosition3, Quaternion.identity) as GameObject;
 
-			GameObject staticBalloon2 = GameObject.Instantiate (balloonPrefab, staticPosition2, Quaternion.identity) as GameObject;
-
-			GameObject staticBalloon3 = GameObject.Instantiate (balloonPrefab, staticPosition3, Quaternion.identity) as GameObject;
-		}
-	}
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BalloonSpawner : MonoBehaviour {
 
@@ -18,11 +19,34 @@ public class BalloonSpawner : MonoBehaviour {
     [SerializeField]
     private float spawnDelay;
 
+    private float timer;
+
+    [SerializeField]
+    private float timerStart = 120.0f;
+    private bool timerActive = false;
+    public Text timerText;
+
+    [SerializeField]
+    private Text balanceText;
+
+    private int balance;
+
     // Use this for initialization
     void Start()
     {
+        setBalance(0);
+
+        // Initializes timer value
+        ResetTimer();
+
         StartCoroutine(SpawnBalloons());
-		StartCoroutine (tickingTimer ());
+		StartCoroutine (tickingTimer());
+
+
+        // TODO: Move this to correct location
+        SetTimerActive(true);
+
+
     }
 	
 	// Update is called once per frame
@@ -44,23 +68,116 @@ public class BalloonSpawner : MonoBehaviour {
 
             int randomBalloonType = Random.Range(0, 3);
 
-            spawnedBalloon.GetComponent<Balloon>().InitializeBalloon((Balloon.BalloonType)randomBalloonType);
+            spawnedBalloon.GetComponent<Balloon>().InitializeBalloon((Balloon.BalloonType)randomBalloonType, this);
 
             yield return new WaitForSeconds(spawnDelay);
 
 
         }
     }
-	void tickingTimer() {
-		public static float timer;
-		int minutes = Mathf.FloorToInt(timer/60F);
-		int seconds = Mathf.FloorToInt(timer - minutes * 60);
-		string time = string.Format("{0:0}:{1:00}", minutes, seconds);
 
-		GUI.Label(new Rect(10,10,250,100), time);	// how to figure out x and y points?
+    public void SetTimerActive(bool active)
+    {
+
+        timerActive = active;
+
+    }
+
+	IEnumerator tickingTimer() {
+
+        while (true)
+        {
+
+            if (timerActive)
+            {
+
+                if (timer > 0)
+                {
+
+                    AddToTimer(-Time.deltaTime);
+
+                }
+            }
+
+            yield return null;
+
+        }
 
 		// if EARN_MONEY then subtract 10 seconds - do these go under function InitializeBalloon()?
 		// if SPEND_POSITIVE then add 10 seconds
 		// if SPEND_NEGATIVE then subtract 10 seconds
 	}
+
+    public void AddToTimer(float timerDelta)
+    {
+
+        SetTimer(timer + timerDelta);
+
+    }
+
+    public void UpdateTimer()
+    {
+
+        int minutes = Mathf.FloorToInt(timer / 60F);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+        string time = string.Format("{0:0}:{1:00}", minutes, seconds);
+
+        timerText.text = time;
+    }
+
+    public void SetTimer(float value)
+    {
+
+        if (value > 0)
+        {
+
+            timer = value;
+
+        }
+        else
+        {
+
+            timer = 0;
+            OnTimerDone();
+
+        }
+
+        UpdateTimer();
+
+
+    }
+
+    public void ResetTimer()
+    {
+
+        SetTimer(timerStart);     
+
+    }
+
+    public void OnTimerDone()
+    {
+
+        // Do stuff when the timer is done
+
+
+    }
+
+    public void setBalance(int value)
+    {
+        balance = value;
+        if (balance >= 0)
+        {
+            balanceText.text = "$" + balance;
+        }
+        else
+        {
+            balanceText.text = "-$" + -balance;
+         }
+    }
+
+    public void addBalance(int valueAdd)
+    {
+
+        setBalance(balance + valueAdd);
+    }
 }

@@ -13,9 +13,13 @@ public class Balloon : MonoBehaviour {
 
     public BalloonType type;
 
+    public int value;
+
     private string balloonText;
 
     private float floatTime = 10.0f;
+
+    private BalloonSpawner spawner;
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,26 +27,40 @@ public class Balloon : MonoBehaviour {
 	}
 
 
-    public void InitializeBalloon(BalloonType type)
+    public void InitializeBalloon(BalloonType type, BalloonSpawner spawner)
     {
 
         this.type = type;
+
+        this.spawner = spawner;
 
         string newText = "";
 
         if (type == Balloon.BalloonType.EARN_MONEY)
         {
-            newText = TextOptions.earnOptions[Random.Range(0, TextOptions.earnOptions.Length)];
+
+            int randomIndex = Random.Range(0, TextOptions.earnOptions.Length);
+
+            newText = TextOptions.earnOptions[randomIndex].Key;
+            value = TextOptions.earnOptions[randomIndex].Value;
         }
 
         if (type == Balloon.BalloonType.SPEND_POSITIVE)
         {
-            newText = TextOptions.positiveOptions[Random.Range(0, TextOptions.positiveOptions.Length)];
+
+            int randomIndex = Random.Range(0, TextOptions.positiveOptions.Length);
+
+            newText = TextOptions.positiveOptions[randomIndex].Key;
+            value = TextOptions.positiveOptions[randomIndex].Value;
         }
 
         if (type == Balloon.BalloonType.SPEND_NEGATIVE)
         {
-            newText = TextOptions.negativeOptions[Random.Range(0, TextOptions.negativeOptions.Length)];
+
+            int randomIndex = Random.Range(0, TextOptions.negativeOptions.Length);
+
+            newText = TextOptions.negativeOptions[randomIndex].Key;
+            value = TextOptions.negativeOptions[randomIndex].Value;
         }
 
         UpdateText(newText);
@@ -76,14 +94,44 @@ public class Balloon : MonoBehaviour {
         TextMesh balloonTextInChild = GetComponentInChildren<TextMesh>();
 
         balloonTextInChild.text = newText;
-
-
-
-
     }
 
-	if (// first scene after selecting a goal) {
-		StartCoroutine(ShowMessage("Your 'balance' or 'budget' is the amount of money you have in your bank account.", /*pause game*/));
+    /// <summary>
+    /// Called when the balloon is clicked or pressed by a user.
+    /// </summary>
+    public void OnBalloonClick()
+    {
+
+        Debug.Log("Pressed");
+
+        switch (type)
+        {
+
+            case BalloonType.EARN_MONEY:
+
+                spawner.AddToTimer(-10.0f);
+                spawner.addBalance(value);
+                break;
+
+            case BalloonType.SPEND_NEGATIVE:
+
+                spawner.AddToTimer(-10.0f);
+                spawner.addBalance(-value);
+                break;
+
+            case BalloonType.SPEND_POSITIVE:
+
+                spawner.AddToTimer(10.0f);
+                spawner.addBalance(-value);
+                break;
+
+        }
+    }
+
+ 
+    /*
+	if() {
+		StartCoroutine(ShowMessage("Your 'balance' or 'budget' is the amount of money you have in your bank account.", pause game));
 	}
 
 	IEnumerator ShowMessage (string message, float delay) {
@@ -92,5 +140,5 @@ public class Balloon : MonoBehaviour {
 		yield return new WaitForSeconds(delay);
 		guiText.enabled = false;
 	}
-
+    */
 }
