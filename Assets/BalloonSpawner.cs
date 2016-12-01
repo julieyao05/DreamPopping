@@ -57,7 +57,7 @@ public class BalloonSpawner : MonoBehaviour {
     private IEnumerator SpawnBalloons()
     {
 
-		while(true)
+		while(true /* balance < goalAmount && timer >= 0 */)
 		{	
 			for(var count=0; count<3; count++)
 			{
@@ -73,8 +73,16 @@ public class BalloonSpawner : MonoBehaviour {
 
 			}
 			yield return new WaitForSeconds(8);
-
-
+            /*
+            if (timer < 0)
+            {
+                // redirect to final page
+            }
+            // redirect to final page
+            else if (balance >= goalAmount)
+            {
+                // Redirect to Congratulations page
+            } */
         }
     }
 
