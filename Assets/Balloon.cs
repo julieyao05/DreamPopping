@@ -103,15 +103,13 @@ public class Balloon : MonoBehaviour {
     {
 
         Debug.Log("Pressed");
-
         switch (type)
         {
 
-            case BalloonType.EARN_MONEY:
-
-                spawner.AddToTimer(-10.0f);
-                spawner.addBalance(value);
-                break;
+			case BalloonType.EARN_MONEY:
+				spawner.AddToTimer (-10.0f);
+				spawner.addBalance (value);
+				break;
 
             case BalloonType.SPEND_NEGATIVE:
 
@@ -126,9 +124,9 @@ public class Balloon : MonoBehaviour {
                 break;
 
         }
-    }
+		//Destroy (gameObject);
 
- 
+    }
     /*
 	if() {
 		StartCoroutine(ShowMessage("Your 'balance' or 'budget' is the amount of money you have in your bank account.", pause game));
