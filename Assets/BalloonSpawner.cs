@@ -56,8 +56,9 @@ public class BalloonSpawner : MonoBehaviour {
 
     private IEnumerator SpawnBalloons()
     {
-		
-		while(true)
+
+		while(true /* balance < goalAmount && timer >= 0 */)
+
 		{	
 			//float xPos = Random.Range(xMin, xMax);
 			var xPos = -4;
@@ -81,8 +82,16 @@ public class BalloonSpawner : MonoBehaviour {
 				xPos = xPos + 4;
 			}
 			yield return new WaitForSeconds(8);
-
-
+            /*
+            if (timer < 0)
+            {
+                // redirect to final page
+            }
+            // redirect to final page
+            else if (balance >= goalAmount)
+            {
+                // Redirect to Congratulations page
+            } */
         }
     }
 
