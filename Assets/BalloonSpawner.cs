@@ -69,7 +69,7 @@ public class BalloonSpawner : MonoBehaviour {
 				Vector2 spawnPosition = new Vector2(xPos, yHeight);
 
 				GameObject spawnedBalloon = GameObject.Instantiate(balloonPrefab, spawnPosition, Quaternion.identity) as GameObject;
-
+				spawnedBalloon.tag = "Respawn";
 				if (count == 0) {
 					textOption = 0;
 				} else if (count == 1) {
