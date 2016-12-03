@@ -152,7 +152,9 @@ public class BalloonSpawner : MonoBehaviour {
 
         while (true)
         {
-
+			if(timer==0 && balance < BalloonGoal.goalAmount){
+				Application.LoadLevel("GameLost");
+			}
             if (timerActive)
             {
 
