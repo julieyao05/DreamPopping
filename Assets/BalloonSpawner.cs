@@ -213,7 +213,7 @@ public class BalloonSpawner : MonoBehaviour {
         else
         {
             ToggleBalanceWarning(true);
-            balanceText.text = "-$" + -balance;
+            balanceText.text = "Owe $" + -balance;
          }
     }
 
