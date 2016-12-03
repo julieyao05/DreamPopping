@@ -76,12 +76,12 @@ public class BalloonSpawner : MonoBehaviour {
 
 		{	
 			//float xPos = Random.Range(xMin, xMax);
+		
 			var xPos = -4;
 			var textOption = 0;
 			for(var count=0; count<3; count++)
 			{
-				
-				Vector2 spawnPosition = new Vector2(xPos, yHeight);
+				Vector2 spawnPosition = new Vector2 (xPos, yHeight);
 
 				GameObject spawnedBalloon = GameObject.Instantiate(balloonPrefab, spawnPosition, Quaternion.identity) as GameObject;
 				spawnedBalloon.tag = "Respawn";
@@ -94,6 +94,8 @@ public class BalloonSpawner : MonoBehaviour {
 				}
 
 				spawnedBalloon.GetComponent<Balloon>().InitializeBalloon((Balloon.BalloonType)textOption, this);
+				spawnedBalloon.transform.localScale = new Vector3 (4F, 4F, transform.localScale.z);
+
 				xPos = xPos + 4;
 			}
 
