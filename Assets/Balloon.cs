@@ -79,9 +79,17 @@ public class Balloon : MonoBehaviour {
         for (float i = 0; i < floatTime; i+= Time.deltaTime)
         {
 
-            Vector2 floatPosition = Vector2.Lerp(startPosition, endPosition, i / floatTime);
+            if (!spawner.paused)
+            {
 
-            this.transform.position = floatPosition;
+                Vector2 floatPosition = Vector2.Lerp(startPosition, endPosition, i / floatTime);
+
+                this.transform.position = floatPosition;
+            }
+            else
+            {
+                i -= Time.deltaTime;
+            }
 
             yield return null;
 
@@ -128,6 +136,7 @@ public class Balloon : MonoBehaviour {
 
         }
 		var balloons = GameObject.FindGameObjectsWithTag("Respawn");
+
 		foreach (GameObject o in balloons) {
 			Destroy(o);
 		}

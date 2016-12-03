@@ -27,11 +27,23 @@ public class BalloonSpawner : MonoBehaviour {
     [SerializeField]
     private Text balanceText;
 
+    [SerializeField]
+    private GameObject balanceWarning;
+
+    private bool warningDone = false;
+
     private int balance;
+
+    public static bool popped = false;
+
+    public bool paused = false;
 
     // Use this for initialization
     void Start()
     {
+
+        BalloonSpawner.popped = false;
+
         setBalance(0);
 
         // Initializes timer value
@@ -79,7 +91,19 @@ public class BalloonSpawner : MonoBehaviour {
 				spawnedBalloon.GetComponent<Balloon>().InitializeBalloon((Balloon.BalloonType)textOption, this);
 				xPos = xPos + 4;
 			}
-			yield return new WaitForSeconds(8);
+
+            float timePassed = 0.0f;
+
+            while (timePassed < 8.0f && !popped)
+            {
+                timePassed += Time.deltaTime;
+                yield return null;
+            }
+
+            popped = false;
+
+
+
             /*
             if (timer < 0)
             {
@@ -108,7 +132,7 @@ public class BalloonSpawner : MonoBehaviour {
             if (timerActive)
             {
 
-                if (timer > 0)
+                if (timer > 0 && !paused)
                 {
 
                     AddToTimer(-Time.deltaTime);
@@ -188,6 +212,7 @@ public class BalloonSpawner : MonoBehaviour {
         }
         else
         {
+            ToggleBalanceWarning(true);
             balanceText.text = "-$" + -balance;
          }
     }
@@ -196,5 +221,28 @@ public class BalloonSpawner : MonoBehaviour {
     {
 
         setBalance(balance + valueAdd);
+    }
+    
+    public void ToggleBalanceWarning(bool active)
+    {
+        if (!active)
+        {
+            balanceWarning.SetActive(active);
+
+            paused = false;
+
+            return;
+        }
+
+        if (active && !warningDone)
+        {
+
+            paused = true;
+
+            balanceWarning.SetActive(active);
+
+            warningDone = true;
+
+        }
     }
 }

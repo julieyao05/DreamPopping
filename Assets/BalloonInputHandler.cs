@@ -24,6 +24,7 @@ public class BalloonInputHandler : MonoBehaviour {
                 {
 
                     hit.collider.GetComponent<Balloon>().OnBalloonClick();
+                    BalloonSpawner.popped = true;
 
                 }
             }
