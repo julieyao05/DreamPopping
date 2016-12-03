@@ -31,9 +31,9 @@ public class TextOptions
 
     public static KeyValuePair<string, int>[] goalOptions = new KeyValuePair<string, int>[]
     {
-            new KeyValuePair<string, int>("Buy Mother's\n Day gift for $50", 50),
+            new KeyValuePair<string, int>("Buy Mother's\n Day gift\n for $50", 50),
             new KeyValuePair<string, int>("Buy Bike\n for $60", 60),
-            new KeyValuePair<string, int>("Buy gift\n for friend's birthday for $40", 40),
+            new KeyValuePair<string, int>("Buy gift\n for friend's\n birthday for $40", 40),
             new KeyValuePair<string, int>( "Buy new\n fiction novel\n for $50", 50)
 	};
 }

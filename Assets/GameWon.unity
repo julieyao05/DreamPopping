@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692504, g: 0.4967869, b: 0.57508504, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.5750856, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -394,8 +394,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -189, y: -73}
-  m_SizeDelta: {x: 193, y: 71}
+  m_AnchoredPosition: {x: -213.1, y: -67.7}
+  m_SizeDelta: {x: 241.1, y: 81.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &739159306
 MonoBehaviour:
@@ -590,7 +590,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.48212844}
   m_AnchorMax: {x: 0.5, y: 0.48212844}
-  m_AnchoredPosition: {x: 166, y: -50.149}
+  m_AnchoredPosition: {x: 227, y: -44.852}
   m_SizeDelta: {x: 194, y: 71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &816203076
@@ -1020,7 +1020,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Try again
+  m_Text: Play Again
 --- !u!222 &1675236116
 CanvasRenderer:
   m_ObjectHideFlags: 0
