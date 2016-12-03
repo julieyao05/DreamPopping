@@ -30,9 +30,14 @@ public class BalloonSpawner : MonoBehaviour {
     [SerializeField]
     private GameObject balanceWarning;
 
+    [SerializeField]
+    private GameObject balanceDefinition;
+
     private bool warningDone = false;
 
     private int balance;
+
+  
 
     public static bool popped = false;
 
@@ -67,7 +72,7 @@ public class BalloonSpawner : MonoBehaviour {
     private IEnumerator SpawnBalloons()
     {
 
-		while(true /* balance < goalAmount && timer >= 0 */)
+		while( balance < BalloonGoal.goalAmount && timer >= 0)
 
 		{	
 			//float xPos = Random.Range(xMin, xMax);
@@ -115,6 +120,14 @@ public class BalloonSpawner : MonoBehaviour {
                 // Redirect to Congratulations page
             } */
         }
+
+        /*
+        if (timer > 0 && balance >= BalloonGoal.goalAmount)
+            buttonsLogic.ChangeScene("GameWon");
+        else
+            buttonsLogic.ChangeScene("GameLost");
+         */   
+       
     }
 
     public void SetTimerActive(bool active)
@@ -208,7 +221,7 @@ public class BalloonSpawner : MonoBehaviour {
         balance = value;
         if (balance >= 0)
         {
-            balanceText.text = "$" + balance;
+            balanceText.text = "Balance $" + balance;
         }
         else
         {

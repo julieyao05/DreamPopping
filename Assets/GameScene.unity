@@ -217,8 +217,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -124, y: 464.3}
-  m_SizeDelta: {x: 164.91, y: 30}
+  m_AnchoredPosition: {x: -113, y: 423.38}
+  m_SizeDelta: {x: 187, y: 111.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &168698520
 MonoBehaviour:
@@ -252,7 +252,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: You've gone negative!
+  m_Text: 'You have spent more
+
+    money than you had
+
+    in your Bank. This is
+
+    how much money you
+
+    owe.'
 --- !u!222 &168698521
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -356,7 +364,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: 399}
+  m_AnchoredPosition: {x: -31.02, y: 335.91}
   m_SizeDelta: {x: 162.04, y: 63.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217721559
@@ -1086,8 +1094,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -82, y: 428}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -84, y: 407.3}
+  m_SizeDelta: {x: 100, y: 144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215634112
 MonoBehaviour:

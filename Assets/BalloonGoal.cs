@@ -6,7 +6,7 @@ public class BalloonGoal : MonoBehaviour
 {
     private int value;
 
-    public int goalAmount;
+    public static int goalAmount;
 
     void Start()
     {
@@ -50,5 +50,9 @@ public class BalloonGoal : MonoBehaviour
 
         SceneManager.LoadScene("GameScene");
 
+    }
+    public int getGoal()
+    {
+        return Goal.gameGoal;
     }
 }
