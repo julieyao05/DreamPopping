@@ -120,15 +120,24 @@ public class BalloonSpawner : MonoBehaviour {
             else if (balance >= goalAmount)
             {
                 // Redirect to Congratulations page
-            } */
+            } 
+
+			*/
         }
 
-        /*
-        if (timer > 0 && balance >= BalloonGoal.goalAmount)
-            buttonsLogic.ChangeScene("GameWon");
-        else
-            buttonsLogic.ChangeScene("GameLost");
-         */   
+        
+		if (timer >= 0 && balance >= BalloonGoal.goalAmount) {
+			
+			Application.LoadLevel("GameWon");
+		} else if(timer==0 && balance < BalloonGoal.goalAmount){
+			Application.LoadLevel("GameLost");
+		}
+		/*if (timer > 0 && balance >= BalloonGoal.goalAmount) {
+
+			buttonsLogic.ChangeScene("GameWon");
+		} else {
+			buttonsLogic.ChangeScene ("GameLost");
+		}*/
        
     }
 
