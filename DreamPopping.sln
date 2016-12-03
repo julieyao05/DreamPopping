@@ -1,7 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{871DECEB-7057-1D82-5401-3791FD2ADB22}") = "DreamPopping", "Assembly-CSharp.csproj", "{C3AF02D5-1296-D258-93C5-6554B3D24515}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamPopping.CSharp", "DreamPopping.CSharp.csproj", "{CD56F5E7-3343-030D-1EF7-984E4C7F923E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C3AF02D5-1296-D258-93C5-6554B3D24515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3AF02D5-1296-D258-93C5-6554B3D24515}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3AF02D5-1296-D258-93C5-6554B3D24515}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3AF02D5-1296-D258-93C5-6554B3D24515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD56F5E7-3343-030D-1EF7-984E4C7F923E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD56F5E7-3343-030D-1EF7-984E4C7F923E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD56F5E7-3343-030D-1EF7-984E4C7F923E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD56F5E7-3343-030D-1EF7-984E4C7F923E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

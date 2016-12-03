@@ -4,4 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Start.unity
+  - enabled: 1
+    path: Assets/instruction.unity
+  - enabled: 1
+    path: Assets/GameWon.unity
+  - enabled: 1
+    path: Assets/GameScene.unity
+  - enabled: 1
+    path: Assets/ChooseGoal.unity

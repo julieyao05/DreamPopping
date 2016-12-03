@@ -16,9 +16,7 @@ public class BalloonSpawner : MonoBehaviour {
     [SerializeField]
     private Object balloonPrefab;
 
-
     [SerializeField]
-
     private float timer;
 
     [SerializeField]

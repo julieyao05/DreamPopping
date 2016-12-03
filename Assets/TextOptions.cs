@@ -18,7 +18,7 @@ public class TextOptions
             new KeyValuePair<string, int>("Buy a Video\n Game Console\n for $50", 50),
             new KeyValuePair<string, int>("Buy New\n Limited Fancy\n Sneakers for $30", 30),
             new KeyValuePair<string, int>("Buy a new\n Smartphone\n for $80", 80),
-            new KeyValuePair<string, int>("Buy Designer Jeans for $40", 40) 
+            new KeyValuePair<string, int>("Buy Designer\n Jeans for $40", 40) 
     };
 
     public static KeyValuePair<string, int>[] earnOptions = new KeyValuePair<string, int>[]
@@ -31,9 +31,9 @@ public class TextOptions
 
     public static KeyValuePair<string, int>[] goalOptions = new KeyValuePair<string, int>[]
     {
-            new KeyValuePair<string, int>("Buy Mother's Day gift for $50", 50),
-            new KeyValuePair<string, int>("Buy Bike for $60", 60),
-            new KeyValuePair<string, int>("Buy gift for friend's birthday for $40", 40),
-            new KeyValuePair<string, int>( "Buy new fiction novel for $50", 50)
+            new KeyValuePair<string, int>("Buy Mother's\n Day gift for $50", 50),
+            new KeyValuePair<string, int>("Buy Bike\n for $60", 60),
+            new KeyValuePair<string, int>("Buy gift\n for friend's birthday for $40", 40),
+            new KeyValuePair<string, int>( "Buy new\n fiction novel\n for $50", 50)
 	};
 }

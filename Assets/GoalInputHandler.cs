@@ -9,6 +9,7 @@ public class GoalInputHandler : MonoBehaviour {
 	}
 
 	void Update () {
+
 		if (Input.GetMouseButtonDown(0))
 		{
 
@@ -17,9 +18,9 @@ public class GoalInputHandler : MonoBehaviour {
 			if (hit)
 			{
 
-				if (hit.collider.GetComponent<Balloon>())
+				if (hit.collider.GetComponent<BalloonGoal>())
 				{
-					hit.collider.GetComponent<Balloon>().OnBalloonClick();
+					hit.collider.GetComponent<BalloonGoal>().OnGoalClick();
 				}
 			}
 		}

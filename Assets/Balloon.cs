@@ -74,7 +74,7 @@ public class Balloon : MonoBehaviour {
 
         Vector2 startPosition = this.transform.position;
         Vector2 endPosition = startPosition;
-        endPosition.y += 20.0f;
+        endPosition.y += 25.0f;
 
         for (float i = 0; i < floatTime; i+= Time.deltaTime)
         {
@@ -86,6 +86,9 @@ public class Balloon : MonoBehaviour {
             yield return null;
 
         }
+
+        Destroy(this.gameObject);
+
     }
     
     public void UpdateText(string newText)
@@ -101,7 +104,7 @@ public class Balloon : MonoBehaviour {
     /// </summary>
     public void OnBalloonClick()
     {
-        Debug.Log("Pressed");
+       // Debug.Log("Pressed");
 
         switch (type)
         {
