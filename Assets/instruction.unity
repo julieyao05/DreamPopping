@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692558, g: 0.49678743, b: 0.57508624, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.5750856, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -512,7 +512,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -147, y: 434}
+  m_AnchoredPosition: {x: -159.1, y: 434}
   m_SizeDelta: {x: 193, y: 319}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &997434285
@@ -708,8 +708,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -199, y: 197}
-  m_SizeDelta: {x: 322, y: 496}
+  m_AnchoredPosition: {x: -8, y: 164}
+  m_SizeDelta: {x: 707, y: 490}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1289856656
 MonoBehaviour:
@@ -732,7 +732,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -743,11 +743,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "1. Choose an item that you want to save money toward. \nDon\u2019t forget
-    about how much it costs once you start \nplaying!\r\n\n2. You must pop one balloon
-    for every set of 3 balloons. \nEach pop will allow you to either earn or spend
-    money. \r\n\n3. Be cautious of the timer. If you don\u2019t save up enough\nmoney
-    before the clock runs out, you will lose. \nCertain purchases will either subtract
+  m_Text: "1. Choose an item that you want to save \nmoney toward. Don\u2019t forget
+    about how \nmuch it costs once you start playing!\r\n\n2. You must pop one balloon
+    for every \nset of 3 balloons. Each pop will allow you \nto either earn or spend
+    money. \r\n\n3. Be cautious of the timer. If you don\u2019t \nsave up enough money
+    before the clock \nruns out, you will lose. Certain purchases \nwill either subtract
     time, or give you \nextra time than you already have. "
 --- !u!222 &1289856657
 CanvasRenderer:
