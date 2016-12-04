@@ -13,5 +13,5 @@ public class OverworldScore : MonoBehaviour {
 	
 	}
 
-	//GlobalScore.add(10);
+	//GlobalScore.addScore(10);
 }
